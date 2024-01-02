@@ -1,0 +1,16 @@
+<div class="table">
+  <table border = 1 [cellPadding]="30" [cellSpacing]="30">
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Action</th>
+    </tr>
+    <tbody>
+    <tr  *ngFor="let mobile of valueFromParent">
+        <td>{{mobile.name}}</td>
+        <td>{{mobile.city}}</td>
+        <td><a class="btn btn-info">Edit</a>&nbsp;&nbsp;&nbsp;<a class="btn btn-danger" (click)="removeValue(mobile.id)">Delete</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>

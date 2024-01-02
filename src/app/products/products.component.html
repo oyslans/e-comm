@@ -1,0 +1,38 @@
+<div class="container d-flex justify-content-center">
+    <div class="row mt-5">
+        <div class="col-sm-4" *ngFor="let value of products">
+            <div class="card">
+                <img [src]="value.thumbnail" class="card-img-top" width="100%" />
+                <div class="card-body pt-0 px-0">
+                    <div class="d-flex flex-row justify-content-between mb-0 px-3">
+                        <small class="text-muted mt-1">STARTING AT</small>
+                        <h6>&dollar;{{value.price}}&ast;</h6>
+                    </div>
+                    <hr class="mt-2 mx-3" />
+                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                        <div class="d-flex flex-column">
+                            <span class="text-muted">{{value.title}}</span><small
+                                class="text-muted">L/100KM&ast;</small>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between p-3 mid">
+                        <div class="d-flex flex-column">
+                            <small class="text-muted mb-1">{{value.category}}</small>
+                        </div>
+                    </div>
+                    <small class="text-muted key pl-3">Standard key Features</small>
+                    <div class="mx-3 mt-3 mb-2">
+                        <button type="button" class="btn btn-danger btn-block" (click)="addToCart(value)">
+                            <small>Add to Cart</small>
+                        </button>
+                        <button (click)="buyNow(value.id)" type="button" class="btn btn-danger btn-block">
+                          <small >Buy Now</small>
+                      </button>
+                    </div>
+                    No of selected items : {{value.qty}} <i class="fa fa-minus-square" aria-hidden="true" (click)="removeFromCart(value)"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

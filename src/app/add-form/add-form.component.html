@@ -1,0 +1,12 @@
+<div class="form-container">
+  <form name = "details" (ngSubmit)="insertData()">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" [(ngModel)]="employee.name">
+    <br>
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" [(ngModel)]="employee.city">
+    <br>
+    <input type="submit" name="submit" id="submit">
+  </form>
+</div><br><br>
+<app-first [valueFromParent]="mobiles"></app-first>
